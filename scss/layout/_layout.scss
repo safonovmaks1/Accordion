@@ -1,0 +1,18 @@
+/*=============== LAYOUT ===============*/
+.container {
+	--max-width: 1170px;
+	--padding: 1rem;
+
+	width: min(100% - (var(--padding) * 2), var(--max-width));
+	margin: 0 auto;
+}
+
+.section {
+	padding: 4rem 0 2rem;
+}
+
+.title {
+	text-align: center;
+	color: var(--title-color);
+	font-size: 2rem;
+}
