@@ -19,7 +19,7 @@
 		min-height: 3.5rem;
 		padding: 0.5rem 3rem 0.5rem 1rem;
 
-		font-weight: 900;
+		font-weight: 600;
 		font-size: var(--normal-font-size);
 
 		cursor: pointer;
@@ -30,13 +30,6 @@
 		margin-left: auto;
 
 		transition: 0.4s;
-	}
-
-	&__body {
-		max-height: 0;
-		overflow: hidden;
-
-		transition: max-height 0.4s;
 	}
 
 	&__content {
@@ -50,7 +43,15 @@
 	}
 }
 
-/* stylelint-disable-next-line selector-class-pattern */
-.accordion__header.active .accordion__arrow {
-	transform: rotate(180deg);
+.accordion__body {
+	max-height: 0;
+	overflow: hidden;
+
+	transition: all 0.4s ease;
+}
+
+.accordion-open {
+	& .accordion__arrow {
+		transform: rotate(180deg);
+	}
 }

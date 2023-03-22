@@ -6,15 +6,15 @@ function accordion(triggersSelector, activeSelector, firstElemShow = false) {
 			const currentlyActiveAccordionItemHeader = document.querySelector(activeSelector)
 
 			if (currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader !== accordionItemHeader) {
-				currentlyActiveAccordionItemHeader.classList.toggle('active')
+				currentlyActiveAccordionItemHeader.classList.toggle('accordion-open')
 				currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0
 			}
 
-			accordionItemHeader.classList.toggle('active')
+			accordionItemHeader.classList.toggle('accordion-open')
 
 			const accordionItemBody = accordionItemHeader.nextElementSibling
 
-			if (accordionItemHeader.classList.contains('active')) {
+			if (accordionItemHeader.classList.contains('accordion-open')) {
 				accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + 'px'
 			} else {
 				accordionItemBody.style.maxHeight = 0
@@ -24,7 +24,7 @@ function accordion(triggersSelector, activeSelector, firstElemShow = false) {
 
 	// first accordion open by default, add active class html accordionItemHeaders
 	function accordionFirstElemShow() {
-		document.querySelector('.accordion__header').classList.add('active')
+		accordionItemHeaders[0].classList.add('accordion-open')
 		accordionItemHeaders[0].nextElementSibling.style.maxHeight =
 			accordionItemHeaders[0].nextElementSibling.scrollHeight + 'px'
 	}
@@ -32,4 +32,4 @@ function accordion(triggersSelector, activeSelector, firstElemShow = false) {
 		accordionFirstElemShow()
 	}
 }
-accordion('.accordion__header', '.active', true)
+accordion('.accordion__header', '.accordion-open', true)
